@@ -1,0 +1,78 @@
+/**
+ * MIXINS
+ */
+
+%clearfix {
+  zoom:1;
+  &::before, &::after {
+    content: '';
+    display: table;
+  }
+  &::after {
+    clear: both;
+  }
+}
+.clearfix {
+  @extend %clearfix;
+}
+
+@mixin nulled-link ($cl:#000, $cl--hover:#000 ) {
+  color: $cl;
+  text-decoration: none;
+
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration: none;
+      color:$cl--hover;
+    }
+}
+
+@mixin font-family ($font-name:'Roboto', $font-weight: 400 )
+{
+ font-family: $font-name, sans-serif;
+ font-weight: $font-weight ;
+}
+
+@mixin font-face ($font-name, $file-name, $path: '../fonts/', $weight:normal, $style:normal)
+{
+  @font-face {
+    font-family: quote($font-name);
+    src:url($path+$file-name+'.eot');
+    src:url($path+$file-name+'.eot?#iefix')format('embedded-opentype'),
+        url($path+$file-name+'.woff')format('woff'),
+        url($path+$file-name+'.ttf')format('truetype'),
+        url($path+$file-name+'.svg##{$font-name}')format('svg');
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
+
+@mixin btn ($fz: 16px, $lh:1.2, $br:9px)
+  {
+    display: inline-block;
+    border:none;
+    outline:none;
+    background-color: transparent;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: $fz;
+    line-height: $lh;
+    border-radius: $br;
+    transition: all .2s ease-in-out;
+    white-space: nowrap;
+
+      &:hover,
+      &:active,
+      &:focus {
+        outline: none;
+      }
+}
+
+@mixin v-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

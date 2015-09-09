@@ -1,0 +1,366 @@
+@font-face {
+    font-family:'Opium WC';
+    src:url(../fonts/opiumnewc-webfont.eot);
+    src:url(../fonts/opiumnewc-webfont.eot?#iefix)format('embedded-opentype'),
+        url(../fonts/opiumnewc-webfont.woff)format('woff'),
+        url(../fonts/opiumnewc-webfont.ttf)format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family:'Opium WC';
+    src:url(../fonts/opiumnewc-bold-webfont.eot);
+    src:url(../fonts/opiumnewc-bold-webfont.eot?#iefix)format('embedded-opentype'),
+        url(../fonts/opiumnewc-bold-webfont.woff)format('woff'),
+        url(../fonts/opiumnewc-bold-webfont.ttf)format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family:'Opium WC';
+    src:url(../fonts/opiumnewc-italic-webfont.eot);
+    src:url(../fonts/opiumnewc-italic-webfont.eot?#iefix)format('embedded-opentype'),
+        url(../fonts/opiumnewc-italic-webfont.woff)format('woff'),
+        url(../fonts/opiumnewc-italic-webfont.ttf)format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+ $breakpoints: (
+   'normal': (min-width: 1024px),
+ );
+
+ @mixin respond-to($breakpoint) {
+   @if map-has-key($breakpoints, $breakpoint) {
+     @media #{inspect(map-get($breakpoints, $breakpoint))} {
+       @content;
+     }
+   } @else {
+     @error 'No `#{$breakpoint}`. '
+          + 'Пожалуйста, убедитесь, что точка остановки объявлена в карте `$breakpoints`.';
+   }
+ }
+
+ // @include respond-to('normal') {
+ //   margin-bottom: 24px;
+ // }
+
+body
+{
+    font-family: 'Opium WC', Helvetica, Arial, sans-serif;
+}
+.container
+{
+    @include respond-to('normal')
+    {
+        box-sizing: border-box;
+        width: 1000px;
+        margin: 0 auto;
+        padding: 0;
+    }
+    @extend %clearfix;
+}
+
+.img-responsive
+{
+    display: block;
+    margin: 0 auto;
+
+    max-width: 100%;
+}
+.text-center
+{
+    text-align: center;
+}
+
+.xs-hidden {
+    display: none;
+      @include respond-to('normal')
+    {
+    display: block;
+    }
+}
+
+
+
+
+
+
+/*------------------------------------*\
+    TYPO
+\*------------------------------------*/
+h2
+{
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+
+    margin-bottom: 20px;
+
+    @include respond-to('normal')
+    {
+        font-size: 24px;
+        line-height: 28px;
+
+        margin-bottom: 25px;
+    }
+}
+p
+{
+    font-size: 16px;
+    line-height: 20px;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    color: #282828;
+
+    @include respond-to('normal')
+    {
+        line-height: 28px;
+
+        margin-bottom: 30px;
+    }
+}
+blockquote
+{
+    font-size: 18px;
+
+    margin: 0;
+    font-weight: 700;
+
+    color: #0c2d83;
+
+    @include respond-to('normal')
+    {
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 400;
+
+      //  margin: -15px 0 30px;
+    }
+}
+figure
+{
+    margin: 0 0 10px;
+
+    @include respond-to('normal')
+    {
+        margin: 0 0 30px;
+    }
+}
+
+.accent
+{
+    position: relative;
+
+    padding-top: 15px;
+
+    color: #fff;
+    background-color: #002375;
+      @include respond-to('normal') {
+
+        padding-top: 40px;
+      }
+    img
+    {
+        padding-top: 15px;
+    }
+    p
+    {
+        color: #fff;
+    }
+    &--export
+    {
+        margin-top: 10px;
+        padding-bottom: 50%;
+
+        background: #002375 url(../img/accent__bg--fly.png) no-repeat left bottom;
+        background-size: contain;
+
+        @include respond-to('normal')
+        {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 390px;
+        }
+    }
+    &--tech
+    {
+
+        padding-bottom: 70%;
+
+
+        background: #002375 url(../img/accent__bg--tech.png) no-repeat left bottom;
+        background-size: contain;
+          @include respond-to('normal') {
+             padding-bottom: 565px;
+             margin-top: 25px;
+             margin-bottom: 25px;
+
+          }
+        h2 {
+            margin-bottom: 5px;
+            @include respond-to('normal')
+            {
+                text-align: center;
+            }
+        }
+    }
+    &--banks
+    {
+
+
+        background: #002375 url(../img/accent__bg--banks.png) no-repeat;
+        background-position: 0 35%;
+        background-size: contain;
+
+         @include respond-to('normal')
+            {
+                background-position: left 115px;
+                margin-top: 25px;
+                margin-bottom: 10px;
+                padding-top: 25px;
+                padding-bottom: 30px;
+
+            }
+
+        h2 + p
+        {
+            margin-bottom: 65%;
+            @include respond-to('normal')
+            {
+                margin-bottom: 530px;
+            }
+
+        }
+    }
+    &--exporters
+    {
+       padding-bottom: 50%;
+       margin-bottom: 30px;
+       background: #002375 url(../img/accent__bg--exporters.png) no-repeat left bottom;
+       background-size: contain;
+        @include respond-to('normal')
+            {
+                margin-top: 10px;
+                margin-bottom: 15px;
+                padding-top: 30px;
+                padding-bottom: 455px;
+
+            }
+        h2
+        {
+
+            margin-bottom: 10px;
+        }
+    }
+    .row:not(:first-child) + .row
+    {
+         @include respond-to('normal')
+            {
+
+        margin-top: 40px;
+    }
+    }
+}
+.fixed-bottom
+{
+    padding: 0 20px;
+    @include respond-to('normal')
+       {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+
+    width: 33.33333333%;
+    padding-left: 10px;
+}
+}
+
+.page-footer
+{
+    background-color: #f3f3f3;
+    padding: 20px 0;
+}
+.footer__copyright {
+    font-size: 14px;
+    a {
+        color: #0c2d83;
+        display: inline-block;
+        line-height: 25px;
+        margin-bottom: 5px;
+
+        @include respond-to('normal')
+           {
+            margin-bottom: 0;
+           }
+      &:hover,
+      &:active,
+      &:focus {
+        color: lighten(#0c2d83, 10%)
+      }
+    }
+}
+.footer__orgs {
+    font-size: 14px;
+    line-height: 25px;
+    white-space: nowrap;
+    &:first-line {
+        display: inline-block;
+    }
+}
+
+/**
+ * ICONS
+ */
+
+.social-likes__widget {
+    line-height: 45px;
+    text-align: center;
+    min-width: auto !important;
+}
+
+.social-likes__button {
+    padding: 0 32.5px !important;
+    position: relative;
+}
+.social-likes__widget {
+    line-height: 45px !important;
+    vertical-align: middle;
+    height: 45px!important;
+    overflow: hidden;
+}
+.social-likes__icon {
+      left: 50% !important;
+      top: 50% !important;
+      transform: translate(-50%, -50%) !important;
+      font-size: 24px !important;
+}
+.social-likes__icon_vkontakte:before {
+    line-height: 45px;
+    vertical-align: middle;
+    content: "\f109" !important;
+    display: inline-block;
+}
+
+.social-likes {
+    width: 100%;
+
+
+    @include respond-to('normal')
+       {
+        text-align: center;
+        margin: 0!important;
+       }
+}
+.social-likes_vertical .social-likes__widget {
+    margin:0 !important;
+    margin-left: -10px !important;
+    margin-bottom: 4px !important;
+
+}
+
+
+
