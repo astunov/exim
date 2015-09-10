@@ -349,6 +349,8 @@ figure
 .social-likes {
     width: 100%;
     margin: 5px 0;
+    font-size: 0;
+    text-align: left;
 
 
     @include respond-to('normal')

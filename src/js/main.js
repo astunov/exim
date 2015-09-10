@@ -30,4 +30,3 @@
   $window.trigger('scroll');
 
 
-// PARALLAX
