@@ -74,6 +74,7 @@ body
     text-align: center;
 }
 
+
 .xs-hidden {
     display: none;
       @include respond-to('normal')
@@ -347,6 +348,7 @@ figure
 
 .social-likes {
     width: 100%;
+    margin: 5px 0;
 
 
     @include respond-to('normal')
@@ -355,12 +357,12 @@ figure
         margin: 0!important;
        }
 }
-.social-likes_vertical .social-likes__widget {
+
+
+.social-likes--promo .social-likes__widget {
+    text-align: left;
     margin:0 !important;
     margin-left: -10px !important;
     margin-bottom: 4px !important;
-
 }
-
-
 
