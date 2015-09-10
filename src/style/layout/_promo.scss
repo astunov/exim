@@ -20,11 +20,12 @@
           min-height: 745px;
             background:
             url(../img/promo__wing.png) left 100px no-repeat,
-            url(../img/promo__bg.jpg) center bottom no-repeat,
+            url(../img/promo__bg.jpg) center bottom no-repeat fixed,
             ;
             background-size:
              25%,
              cover;
+
         }
     }
     &__header

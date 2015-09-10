@@ -1,4 +1,5 @@
 
+
   // ANIMATIONS ON SCROLL
   //Cache reference to window and animation items
   var $animation_elements = $('.animated ');
@@ -27,3 +28,6 @@
 
   $window.on('scroll resize', check_if_in_view);
   $window.trigger('scroll');
+
+
+// PARALLAX
