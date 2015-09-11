@@ -21,14 +21,23 @@
         @include respond-to('normal') {
           min-height: 745px;
             background:
-            url(../img/promo__wing.png) left 100px no-repeat,
             url(../img/promo__bg.jpg) center bottom no-repeat fixed,
             ;
             background-size:
-             25%,
              cover;
 
         }
+    }
+    &__dec {
+       @include respond-to('normal') {
+        background:  url(../img/promo__wing.png) left 100px no-repeat;
+        background-size: 25%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+      }
     }
     &__header
     {
